@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { IProfileBillingAdress } from './profileBillingAdress.interface';
 
 const profileBillingAdressSchema = new mongoose.Schema({
     profileID: {
@@ -11,7 +12,7 @@ const profileBillingAdressSchema = new mongoose.Schema({
     },
     billingType: {
         type: String,
-        enum: ["Individual", "Institutional"]
+
     },
     addressName: String,
     name: String,
@@ -26,16 +27,20 @@ const profileBillingAdressSchema = new mongoose.Schema({
     addressStateID: String,
     addressCityID: String,
     address: String,
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
-    updatedDate: {
-        type: Date,
-        default: Date.now
-    }
-});
 
-const ProfileBillingAdress = mongoose.model('ProfileBillingAdress', profileBillingAdressSchema);
+}, {
+    id: false,
+    toJSON: {
+        getters: true
+    },
+    toObject: {
+        getters: true
+    },
+    timestamps: true,
+    versionKey: false
+}
+);
+
+const ProfileBillingAdress = mongoose.model<IProfileBillingAdress & mongoose.Document>('ProfileBillingAdress', profileBillingAdressSchema);
 
 module.exports = ProfileBillingAdress;

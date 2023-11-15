@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -23,6 +26,11 @@ let StockController = class StockController extends tsoa_1.Controller {
     async getAllStockInOut() {
         return stockInOut_model_1.default.find();
     }
+    async addGeneralStock(body) {
+        const u = new generalStock_model_1.default(body);
+        await u.save();
+        return u;
+    }
 };
 exports.StockController = StockController;
 __decorate([
@@ -37,16 +45,15 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], StockController.prototype, "getAllStockInOut", null);
+__decorate([
+    (0, tsoa_1.Post)(),
+    __param(0, (0, tsoa_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], StockController.prototype, "addGeneralStock", null);
 exports.StockController = StockController = __decorate([
     (0, tsoa_1.Route)("stock"),
     (0, tsoa_1.Tags)("Stock")
 ], StockController);
-// @Route("stock-in-out")
-// @Tags("Stock-in-out")
-// export class StockInOutController extends Controller {
-//     @Get("get-all-stockInOut")
-//     public async getAllStockInOut() {
-//         return StockInOutCard.find()
-//     }
-// }
 //# sourceMappingURL=stock.controller.js.map

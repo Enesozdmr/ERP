@@ -2,7 +2,7 @@
 import { OId } from '../../types/objectId';
 
 export interface IGeneralStock {
-    _id: OId
+    _id?: OId;
     companyProfileID: OId;
     stockName: string;
     stockNameEN: string;
@@ -10,7 +10,40 @@ export interface IGeneralStock {
     stockType: string;
     recordDate: string;
     isMainStock: boolean;
-    status: boolean;
+    status: string;
+    marks: string;
+    model: string;
+    generalBarcode: string;
+    stockUnit: string;
+    stockCount: number;
+    shelfNo: string;
+    shelfFloorNo: string;
+    specialCode: string;
+    category: string;
+    subCategory: string;
+    subSubCategory: string;
+    descriptions: string;
+    producerCode: string;
+    sutCode: string;
+    producerName: string;
+    producerAddress: string;
+    leadTime: string;
+    weightKg: number;
+    weight: string;
+    costPrice: number;
+    outsourcingPrice: number;
+    outsourcing: boolean;
+    utsRecord: boolean;
+}
+export interface addGeneralStockParams {
+    companyProfileID: OId;
+    stockName: string;
+    stockNameEN: string;
+    stockCode: string;
+    stockType: string;
+    recordDate: string;
+    isMainStock: boolean;
+    status: string;
     marks: string;
     model: string;
     generalBarcode: string;

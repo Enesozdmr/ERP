@@ -14,15 +14,12 @@ const operationSchema = new mongoose.Schema({
     complianceDocumentDescription: String,
     description: String,
     riskValue: Number,
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
-    updatedDate: {
-        type: Date,
-        default: Date.now
+
+},
+    {
+        timestamps: true
     }
-});
+);
 
 const Operation = mongoose.model('Operation', operationSchema);
 

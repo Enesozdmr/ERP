@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ICompanyProfile } from './companyProfile.interface';
 
 const companyProfileSchema = new mongoose.Schema({
     adminUserID: {
@@ -16,6 +17,6 @@ const companyProfileSchema = new mongoose.Schema({
     logo: String
 });
 
-const CompanyProfile = mongoose.model('CompanyProfile', companyProfileSchema);
+const CompanyProfile = mongoose.model<ICompanyProfile & mongoose.Document>('CompanyProfile', companyProfileSchema);
 
 module.exports = CompanyProfile;

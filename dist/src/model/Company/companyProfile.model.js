@@ -21,4 +21,4 @@ const companyProfileSchema = new mongoose_1.default.Schema({
 });
 const CompanyProfile = mongoose_1.default.model('CompanyProfile', companyProfileSchema);
 module.exports = CompanyProfile;
-//# sourceMappingURL=CompanyProfile.js.map
+//# sourceMappingURL=companyProfile.model.js.map

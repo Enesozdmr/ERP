@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const personelProfileSchema = new mongoose.Schema({
   roleId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Role' // Roles koleksiyonuna referans
+    ref: 'Role'
   },
   companyID: { type: Number, require: true },
   isCompanyAdmin: { type: Boolean, require: true },

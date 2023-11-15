@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ICompanyBillingAddress } from './companyBillingAddress.interface';
 
 const billingAddressSchema = new mongoose.Schema({
     companyProfileID: {
@@ -7,7 +8,7 @@ const billingAddressSchema = new mongoose.Schema({
     },
     billingType: {
         type: String,
-        enum: ["Individual", "Institutional"]
+
     },
     addressName: String,
     name: String,
@@ -22,16 +23,23 @@ const billingAddressSchema = new mongoose.Schema({
     addressState: String,
     addressCity: String,
     address: String,
-    createdDate: {
-        type: Date,
-        default: Date.now
-    },
-    updatedDate: {
-        type: Date,
-        default: Date.now
-    }
-});
 
-const BillingAddress = mongoose.model('CompanyBillingAddress', billingAddressSchema);
+},
+
+    {
+        id: false,
+        toJSON: {
+            getters: true
+        },
+        toObject: {
+            getters: true
+        },
+        timestamps: true,
+        versionKey: false
+    },
+
+);
+
+const BillingAddress = mongoose.model<ICompanyBillingAddress & mongoose.Document>('CompanyBillingAddress', billingAddressSchema);
 
 module.exports = BillingAddress;

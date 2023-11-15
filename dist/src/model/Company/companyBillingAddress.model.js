@@ -11,7 +11,6 @@ const billingAddressSchema = new mongoose_1.default.Schema({
     },
     billingType: {
         type: String,
-        enum: ["Individual", "Institutional"]
     },
     addressName: String,
     name: String,
@@ -26,15 +25,17 @@ const billingAddressSchema = new mongoose_1.default.Schema({
     addressState: String,
     addressCity: String,
     address: String,
-    createdDate: {
-        type: Date,
-        default: Date.now
+}, {
+    id: false,
+    toJSON: {
+        getters: true
     },
-    updatedDate: {
-        type: Date,
-        default: Date.now
-    }
+    toObject: {
+        getters: true
+    },
+    timestamps: true,
+    versionKey: false
 });
 const BillingAddress = mongoose_1.default.model('CompanyBillingAddress', billingAddressSchema);
 module.exports = BillingAddress;
-//# sourceMappingURL=CompanyBillingAddress.js.map
+//# sourceMappingURL=companyBillingAddress.model.js.map

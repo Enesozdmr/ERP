@@ -82,7 +82,7 @@ const models: TsoaRoute.Models = {
     "IGeneralStock": {
         "dataType": "refObject",
         "properties": {
-            "_id": {"ref":"OId","required":true},
+            "_id": {"ref":"OId"},
             "companyProfileID": {"ref":"OId","required":true},
             "stockName": {"dataType":"string","required":true},
             "stockNameEN": {"dataType":"string","required":true},
@@ -90,7 +90,7 @@ const models: TsoaRoute.Models = {
             "stockType": {"dataType":"string","required":true},
             "recordDate": {"dataType":"string","required":true},
             "isMainStock": {"dataType":"boolean","required":true},
-            "status": {"dataType":"boolean","required":true},
+            "status": {"dataType":"string","required":true},
             "marks": {"dataType":"string","required":true},
             "model": {"dataType":"string","required":true},
             "generalBarcode": {"dataType":"string","required":true},
@@ -144,6 +144,44 @@ const models: TsoaRoute.Models = {
             "barcode": {"dataType":"string","required":true},
             "leadTime": {"dataType":"string","required":true},
             "billingPDFLink": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "addGeneralStockParams": {
+        "dataType": "refObject",
+        "properties": {
+            "companyProfileID": {"ref":"OId","required":true},
+            "stockName": {"dataType":"string","required":true},
+            "stockNameEN": {"dataType":"string","required":true},
+            "stockCode": {"dataType":"string","required":true},
+            "stockType": {"dataType":"string","required":true},
+            "recordDate": {"dataType":"string","required":true},
+            "isMainStock": {"dataType":"boolean","required":true},
+            "status": {"dataType":"string","required":true},
+            "marks": {"dataType":"string","required":true},
+            "model": {"dataType":"string","required":true},
+            "generalBarcode": {"dataType":"string","required":true},
+            "stockUnit": {"dataType":"string","required":true},
+            "stockCount": {"dataType":"double","required":true},
+            "shelfNo": {"dataType":"string","required":true},
+            "shelfFloorNo": {"dataType":"string","required":true},
+            "specialCode": {"dataType":"string","required":true},
+            "category": {"dataType":"string","required":true},
+            "subCategory": {"dataType":"string","required":true},
+            "subSubCategory": {"dataType":"string","required":true},
+            "descriptions": {"dataType":"string","required":true},
+            "producerCode": {"dataType":"string","required":true},
+            "sutCode": {"dataType":"string","required":true},
+            "producerName": {"dataType":"string","required":true},
+            "producerAddress": {"dataType":"string","required":true},
+            "leadTime": {"dataType":"string","required":true},
+            "weightKg": {"dataType":"double","required":true},
+            "weight": {"dataType":"string","required":true},
+            "costPrice": {"dataType":"double","required":true},
+            "outsourcingPrice": {"dataType":"double","required":true},
+            "outsourcing": {"dataType":"boolean","required":true},
+            "utsRecord": {"dataType":"boolean","required":true},
         },
         "additionalProperties": false,
     },
@@ -320,6 +358,31 @@ export function RegisterRoutes(app: Router) {
 
 
               const promise = controller.getAllStockInOut.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.post('/stock',
+            ...(fetchMiddlewares<RequestHandler>(StockController)),
+            ...(fetchMiddlewares<RequestHandler>(StockController.prototype.addGeneralStock)),
+
+            function StockController_addGeneralStock(request: any, response: any, next: any) {
+            const args = {
+                    body: {"in":"body","name":"body","required":true,"ref":"addGeneralStockParams"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new StockController();
+
+
+              const promise = controller.addGeneralStock.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

@@ -1,1 +1,0 @@
-{"version":3,"file":"CustomerGroup.js","sourceRoot":"","sources":["../../../../src/model/Customer/CustomerGroup.ts"],"names":[],"mappings":";;;;;AAAA,wDAAgC;AAEhC,MAAM,mBAAmB,GAAG,IAAI,kBAAQ,CAAC,MAAM,CAAC;IAC5C,IAAI,EAAE,MAAM;CACf,CAAC,CAAC;AAEH,MAAM,aAAa,GAAG,kBAAQ,CAAC,KAAK,CAAC,eAAe,EAAE,mBAAmB,CAAC,CAAC;AAE3E,MAAM,CAAC,OAAO,GAAG,aAAa,CAAC"}

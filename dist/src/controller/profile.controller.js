@@ -30,24 +30,6 @@ let ProfileController = class ProfileController extends tsoa_1.Controller {
         await u.save();
         return u;
     }
-    async getAllProfileList() {
-        const profiles = await profile_model_1.default.find();
-        return profiles.map((profile) => ({
-            customerGroupID: profile.customerGroupID,
-            type: profile.type,
-            name: profile.name,
-            officialName: profile.officialName,
-            taxNumber: profile.taxNumber,
-            taxOffice: profile.taxOffice,
-            addressCountry: profile.addressCountry,
-            addressCity: profile.addressCity,
-            addressDistrict: profile.addressDistrict,
-            address: profile.address,
-            contactName: profile.contactName,
-            contactPhone: profile.contactPhone,
-            contactEmail: profile.contactEmail,
-        }));
-    }
 };
 exports.ProfileController = ProfileController;
 __decorate([
@@ -70,12 +52,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ProfileController.prototype, "addProfile", null);
-__decorate([
-    (0, tsoa_1.Get)("Profile-list"),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], ProfileController.prototype, "getAllProfileList", null);
 exports.ProfileController = ProfileController = __decorate([
     (0, tsoa_1.Route)("profile"),
     (0, tsoa_1.Tags)("Profile")
