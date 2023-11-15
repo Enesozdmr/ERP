@@ -1,0 +1,1055 @@
+{
+    "components": {
+        "examples": {},
+        "headers": {},
+        "parameters": {},
+        "requestBodies": {},
+        "responses": {},
+        "schemas": {
+            "FlattenMaps_T_": {
+                "properties": {},
+                "type": "object"
+            },
+            "Document_any.any.any_": {
+                "$ref": "#/components/schemas/FlattenMaps_T_",
+                "description": "Generic types for Document:\n*  T - the type of _id\n*  TQueryHelpers - Object with any helpers that should be mixed into the Query type\n*  DocType - the type of the actual Document created"
+            },
+            "OId": {
+                "type": "string",
+                "minLength": 24,
+                "maxLength": 24,
+                "pattern": "[a-f][0-9]"
+            },
+            "IProfile": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "customerGroupID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "officialName": {
+                        "type": "string"
+                    },
+                    "taxNumber": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "taxOffice": {
+                        "type": "string"
+                    },
+                    "addressCountry": {
+                        "type": "string"
+                    },
+                    "addressCity": {
+                        "type": "string"
+                    },
+                    "addressDistrict": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "contactName": {
+                        "type": "string"
+                    },
+                    "contactPhone": {
+                        "type": "string"
+                    },
+                    "contactEmail": {
+                        "type": "string"
+                    },
+                    "createdAt": {},
+                    "updatedAt": {}
+                },
+                "required": [
+                    "_id",
+                    "customerGroupID",
+                    "type",
+                    "name",
+                    "officialName",
+                    "taxNumber",
+                    "taxOffice",
+                    "addressCountry",
+                    "addressCity",
+                    "addressDistrict",
+                    "address",
+                    "contactName",
+                    "contactPhone",
+                    "contactEmail",
+                    "createdAt",
+                    "updatedAt"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "ObjectId": {
+                "type": "string"
+            },
+            "ProfilePostParams": {
+                "properties": {
+                    "customerGroupID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "officialName": {
+                        "type": "string"
+                    },
+                    "taxNumber": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "taxOffice": {
+                        "type": "string"
+                    },
+                    "addressCountry": {
+                        "type": "string"
+                    },
+                    "addressCity": {
+                        "type": "string"
+                    },
+                    "addressDistrict": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "contactName": {
+                        "type": "string"
+                    },
+                    "contactPhone": {
+                        "type": "string"
+                    },
+                    "contactEmail": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "customerGroupID",
+                    "type",
+                    "name",
+                    "officialName",
+                    "taxNumber",
+                    "taxOffice",
+                    "addressCountry",
+                    "addressCity",
+                    "addressDistrict",
+                    "address",
+                    "contactName",
+                    "contactPhone",
+                    "contactEmail"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "ProfileListParams": {
+                "properties": {
+                    "customerGroupID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "officialName": {
+                        "type": "string"
+                    },
+                    "taxNumber": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "taxOffice": {
+                        "type": "string"
+                    },
+                    "addressCountry": {
+                        "type": "string"
+                    },
+                    "addressCity": {
+                        "type": "string"
+                    },
+                    "addressDistrict": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "contactName": {
+                        "type": "string"
+                    },
+                    "contactPhone": {
+                        "type": "string"
+                    },
+                    "contactEmail": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "customerGroupID",
+                    "type",
+                    "name",
+                    "officialName",
+                    "taxNumber",
+                    "taxOffice",
+                    "addressCountry",
+                    "addressCity",
+                    "addressDistrict",
+                    "address",
+                    "contactName",
+                    "contactPhone",
+                    "contactEmail"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "IGeneralStock": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "companyProfileID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "stockName": {
+                        "type": "string"
+                    },
+                    "stockNameEN": {
+                        "type": "string"
+                    },
+                    "stockCode": {
+                        "type": "string"
+                    },
+                    "stockType": {
+                        "type": "string"
+                    },
+                    "recordDate": {
+                        "type": "string"
+                    },
+                    "isMainStock": {
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "marks": {
+                        "type": "string"
+                    },
+                    "model": {
+                        "type": "string"
+                    },
+                    "generalBarcode": {
+                        "type": "string"
+                    },
+                    "stockUnit": {
+                        "type": "string"
+                    },
+                    "stockCount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "shelfNo": {
+                        "type": "string"
+                    },
+                    "shelfFloorNo": {
+                        "type": "string"
+                    },
+                    "specialCode": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "subCategory": {
+                        "type": "string"
+                    },
+                    "subSubCategory": {
+                        "type": "string"
+                    },
+                    "descriptions": {
+                        "type": "string"
+                    },
+                    "producerCode": {
+                        "type": "string"
+                    },
+                    "sutCode": {
+                        "type": "string"
+                    },
+                    "producerName": {
+                        "type": "string"
+                    },
+                    "producerAddress": {
+                        "type": "string"
+                    },
+                    "leadTime": {
+                        "type": "string"
+                    },
+                    "weightKg": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "weight": {
+                        "type": "string"
+                    },
+                    "costPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "outsourcingPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "outsourcing": {
+                        "type": "boolean"
+                    },
+                    "utsRecord": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "companyProfileID",
+                    "stockName",
+                    "stockNameEN",
+                    "stockCode",
+                    "stockType",
+                    "recordDate",
+                    "isMainStock",
+                    "status",
+                    "marks",
+                    "model",
+                    "generalBarcode",
+                    "stockUnit",
+                    "stockCount",
+                    "shelfNo",
+                    "shelfFloorNo",
+                    "specialCode",
+                    "category",
+                    "subCategory",
+                    "subSubCategory",
+                    "descriptions",
+                    "producerCode",
+                    "sutCode",
+                    "producerName",
+                    "producerAddress",
+                    "leadTime",
+                    "weightKg",
+                    "weight",
+                    "costPrice",
+                    "outsourcingPrice",
+                    "outsourcing",
+                    "utsRecord"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "Required_any_": {
+                "properties": {},
+                "type": "object",
+                "description": "Make all properties in T required"
+            },
+            "IStockInOut": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "stockID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "billingNumber": {
+                        "type": "string"
+                    },
+                    "billingDate": {
+                        "type": "string"
+                    },
+                    "supplierGroupID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "customerGroupID": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "recordDate": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string"
+                    },
+                    "count": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "currency": {
+                        "type": "string"
+                    },
+                    "purchasePrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "unitPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "costPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "salesPrice": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "barcode": {
+                        "type": "string"
+                    },
+                    "leadTime": {
+                        "type": "string"
+                    },
+                    "billingPDFLink": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "stockID",
+                    "type",
+                    "billingNumber",
+                    "billingDate",
+                    "supplierGroupID",
+                    "customerGroupID",
+                    "recordDate",
+                    "unit",
+                    "count",
+                    "currency",
+                    "purchasePrice",
+                    "unitPrice",
+                    "costPrice",
+                    "salesPrice",
+                    "barcode",
+                    "leadTime",
+                    "billingPDFLink"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "User": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "admin",
+                            "user"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "surname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "createdAt": {},
+                    "updatedAt": {}
+                },
+                "required": [
+                    "_id",
+                    "role",
+                    "name",
+                    "surname",
+                    "email",
+                    "password",
+                    "createdAt",
+                    "updatedAt"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "UserSendParams": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "surname": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "name",
+                    "surname"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "UserPostParams": {
+                "properties": {
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "admin",
+                            "user"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "surname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "role",
+                    "name",
+                    "surname",
+                    "email",
+                    "password"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "UserUpdateParams": {
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "surname": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "surname"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "jwt": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "x-auth"
+            }
+        }
+    },
+    "info": {
+        "title": "deneme",
+        "version": "1.0.0",
+        "license": {
+            "name": "ISC"
+        },
+        "contact": {}
+    },
+    "openapi": "3.0.0",
+    "paths": {
+        "/profile/get-all": {
+            "get": {
+                "operationId": "GetAllProfile",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/IProfile"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "properties": {
+                                                    "_id": {
+                                                        "$ref": "#/components/schemas/ObjectId"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "_id"
+                                                ],
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Profile"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/profile/{id}": {
+            "get": {
+                "operationId": "GetUserById",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/IProfile"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "properties": {
+                                                "_id": {
+                                                    "$ref": "#/components/schemas/ObjectId"
+                                                }
+                                            },
+                                            "required": [
+                                                "_id"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Profile"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OId"
+                        }
+                    }
+                ]
+            }
+        },
+        "/profile": {
+            "post": {
+                "operationId": "AddProfile",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProfilePostParams"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Profile"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProfilePostParams"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/Profile-list": {
+            "get": {
+                "operationId": "GetAllProfileList",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProfileListParams"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Profile"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/stock/get-all": {
+            "get": {
+                "operationId": "GetAllStock",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/IGeneralStock"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/Required_any_"
+                                            }
+                                        ]
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Stock"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/stock/get-all-stockInOut": {
+            "get": {
+                "operationId": "GetAllStockInOut",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/IStockInOut"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/Required_any_"
+                                            }
+                                        ]
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Stock"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/users/get-all": {
+            "get": {
+                "operationId": "GetAllUsers",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/User"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "properties": {
+                                                    "_id": {
+                                                        "$ref": "#/components/schemas/ObjectId"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "_id"
+                                                ],
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "operationId": "GetUserById",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/User"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "properties": {
+                                                "_id": {
+                                                    "$ref": "#/components/schemas/ObjectId"
+                                                }
+                                            },
+                                            "required": [
+                                                "_id"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OId"
+                        }
+                    }
+                ]
+            },
+            "patch": {
+                "operationId": "UpdateUserById",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/User"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "properties": {
+                                                "_id": {
+                                                    "$ref": "#/components/schemas/ObjectId"
+                                                }
+                                            },
+                                            "required": [
+                                                "_id"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OId"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserUpdateParams"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "DeleteUserById",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/User"
+                                        },
+                                        {
+                                            "$ref": "#/components/schemas/Document_any.any.any_"
+                                        },
+                                        {
+                                            "properties": {
+                                                "_id": {
+                                                    "$ref": "#/components/schemas/ObjectId"
+                                                }
+                                            },
+                                            "required": [
+                                                "_id"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OId"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserUpdateParams"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "post": {
+                "operationId": "AddUser",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserSendParams"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserPostParams"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ]
+}
