@@ -1,0 +1,1 @@
+{"version":3,"file":"supplierGroup.model.js","sourceRoot":"","sources":["../../../src/model/supplierGroup.model.ts"],"names":[],"mappings":";;;;;AAAA,wDAAgC;AAGhC,MAAM,mBAAmB,GAAG,IAAI,kBAAQ,CAAC,MAAM,CAAC;IAC5C,IAAI,EAAE,MAAM;CACf,CAAC,CAAC;AAEH,MAAM,aAAa,GAAG,kBAAQ,CAAC,KAAK,CAAqC,eAAe,EAAE,mBAAmB,CAAC,CAAC;AAE/G,MAAM,CAAC,OAAO,GAAG,aAAa,CAAC"}

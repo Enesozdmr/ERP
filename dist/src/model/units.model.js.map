@@ -1,0 +1,1 @@
+{"version":3,"file":"units.model.js","sourceRoot":"","sources":["../../../src/model/units.model.ts"],"names":[],"mappings":";;;;;AAAA,wDAAgC;AAGhC,MAAM,UAAU,GAAG,IAAI,kBAAQ,CAAC,MAAM,CAAC;IACnC,IAAI,EAAE;QACF,IAAI,EAAE,MAAM;QACZ,MAAM,EAAE,IAAI;KACf;CACJ,CAAC,CAAC;AAEH,MAAM,IAAI,GAAG,kBAAQ,CAAC,KAAK,CAA4B,MAAM,EAAE,UAAU,CAAC,CAAC;AAE3E,MAAM,CAAC,OAAO,GAAG,IAAI,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"taskGroup.model.js","sourceRoot":"","sources":["../../../src/model/taskGroup.model.ts"],"names":[],"mappings":";;;;;AAAA,wDAAgC;AAGhC,MAAM,eAAe,GAAG,IAAI,kBAAQ,CAAC,MAAM,CAAC;IACxC,IAAI,EAAE,MAAM;CACf,CAAC,CAAC;AAEH,MAAM,SAAS,GAAG,kBAAQ,CAAC,KAAK,CAAiC,WAAW,EAAE,eAAe,CAAC,CAAC;AAE/F,MAAM,CAAC,OAAO,GAAG,SAAS,CAAC"}
