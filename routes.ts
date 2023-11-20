@@ -9,6 +9,8 @@ import { StockController } from './src/controller/stock.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { SupplierController } from './src/controller/supplier.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { UnitsController } from './src/controller/units.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { UserController } from './src/controller/user.controller';
 import { expressAuthentication } from './src/middleware/authentication.middleware';
 // @ts-ignore - no great way to install types from subpackage
@@ -84,7 +86,7 @@ const models: TsoaRoute.Models = {
     "IGeneralStock": {
         "dataType": "refObject",
         "properties": {
-            "_id": {"ref":"OId"},
+            "_id": {"ref":"OId","required":true},
             "companyProfileID": {"ref":"OId","required":true},
             "stockName": {"dataType":"string","required":true},
             "stockNameEN": {"dataType":"string","required":true},
@@ -188,7 +190,78 @@ const models: TsoaRoute.Models = {
         "additionalProperties": false,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "addStockkInOutParams": {
+        "dataType": "refObject",
+        "properties": {
+            "stockID": {"ref":"OId","required":true},
+            "type": {"dataType":"string","required":true},
+            "billingNumber": {"dataType":"string","required":true},
+            "billingDate": {"dataType":"string","required":true},
+            "supplierGroupID": {"ref":"OId","required":true},
+            "customerGroupID": {"ref":"OId","required":true},
+            "recordDate": {"dataType":"string","required":true},
+            "unit": {"dataType":"string","required":true},
+            "count": {"dataType":"double","required":true},
+            "currency": {"dataType":"string","required":true},
+            "purchasePrice": {"dataType":"double","required":true},
+            "unitPrice": {"dataType":"double","required":true},
+            "costPrice": {"dataType":"double","required":true},
+            "salesPrice": {"dataType":"double","required":true},
+            "barcode": {"dataType":"string","required":true},
+            "leadTime": {"dataType":"string","required":true},
+            "billingPDFLink": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "updateGeneralStockParams": {
+        "dataType": "refObject",
+        "properties": {
+            "companyProfileID": {"ref":"OId","required":true},
+            "stockName": {"dataType":"string","required":true},
+            "stockNameEN": {"dataType":"string","required":true},
+            "stockCode": {"dataType":"string","required":true},
+            "stockType": {"dataType":"string","required":true},
+            "recordDate": {"dataType":"string","required":true},
+            "isMainStock": {"dataType":"boolean","required":true},
+            "status": {"dataType":"string","required":true},
+            "marks": {"dataType":"string","required":true},
+            "model": {"dataType":"string","required":true},
+            "generalBarcode": {"dataType":"string","required":true},
+            "stockUnit": {"dataType":"string","required":true},
+            "stockCount": {"dataType":"double","required":true},
+            "shelfNo": {"dataType":"string","required":true},
+            "shelfFloorNo": {"dataType":"string","required":true},
+            "specialCode": {"dataType":"string","required":true},
+            "category": {"dataType":"string","required":true},
+            "subCategory": {"dataType":"string","required":true},
+            "subSubCategory": {"dataType":"string","required":true},
+            "descriptions": {"dataType":"string","required":true},
+            "producerCode": {"dataType":"string","required":true},
+            "sutCode": {"dataType":"string","required":true},
+            "producerName": {"dataType":"string","required":true},
+            "producerAddress": {"dataType":"string","required":true},
+            "leadTime": {"dataType":"string","required":true},
+            "weightKg": {"dataType":"double","required":true},
+            "weight": {"dataType":"string","required":true},
+            "costPrice": {"dataType":"double","required":true},
+            "outsourcingPrice": {"dataType":"double","required":true},
+            "outsourcing": {"dataType":"boolean","required":true},
+            "utsRecord": {"dataType":"boolean","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "ISupplierGroup": {
+        "dataType": "refObject",
+        "properties": {
+            "_id": {"ref":"OId","required":true},
+            "name": {"dataType":"string","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "IUnit": {
         "dataType": "refObject",
         "properties": {
             "_id": {"ref":"OId","required":true},
@@ -400,6 +473,57 @@ export function RegisterRoutes(app: Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.post('/stock/stock-in-out',
+            ...(fetchMiddlewares<RequestHandler>(StockController)),
+            ...(fetchMiddlewares<RequestHandler>(StockController.prototype.addStockInOut)),
+
+            function StockController_addStockInOut(request: any, response: any, next: any) {
+            const args = {
+                    body: {"in":"body","name":"body","required":true,"ref":"addStockkInOutParams"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new StockController();
+
+
+              const promise = controller.addStockInOut.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.patch('/stock/:id',
+            ...(fetchMiddlewares<RequestHandler>(StockController)),
+            ...(fetchMiddlewares<RequestHandler>(StockController.prototype.updateUserById)),
+
+            function StockController_updateUserById(request: any, response: any, next: any) {
+            const args = {
+                    id: {"in":"path","name":"id","required":true,"ref":"OId"},
+                    body: {"in":"body","name":"body","required":true,"ref":"updateGeneralStockParams"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new StockController();
+
+
+              const promise = controller.updateUserById.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/supplier/supplier-get',
             ...(fetchMiddlewares<RequestHandler>(SupplierController)),
             ...(fetchMiddlewares<RequestHandler>(SupplierController.prototype.getAllSuppliers)),
@@ -418,6 +542,30 @@ export function RegisterRoutes(app: Router) {
 
 
               const promise = controller.getAllSuppliers.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.get('/units/get-all',
+            ...(fetchMiddlewares<RequestHandler>(UnitsController)),
+            ...(fetchMiddlewares<RequestHandler>(UnitsController.prototype.getAllUnits)),
+
+            function UnitsController_getAllUnits(request: any, response: any, next: any) {
+            const args = {
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new UnitsController();
+
+
+              const promise = controller.getAllUnits.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

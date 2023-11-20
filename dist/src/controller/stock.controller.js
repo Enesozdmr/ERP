@@ -31,6 +31,14 @@ let StockController = class StockController extends tsoa_1.Controller {
         await u.save();
         return u;
     }
+    async addStockInOut(body) {
+        const u = new stockInOut_model_1.default(body);
+        await u.save();
+        return u;
+    }
+    async updateUserById(id, body) {
+        return await generalStock_model_1.default.findByIdAndUpdate(id, body);
+    }
 };
 exports.StockController = StockController;
 __decorate([
@@ -52,6 +60,21 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], StockController.prototype, "addGeneralStock", null);
+__decorate([
+    (0, tsoa_1.Post)("stock-in-out"),
+    __param(0, (0, tsoa_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], StockController.prototype, "addStockInOut", null);
+__decorate([
+    (0, tsoa_1.Patch)("{id}"),
+    __param(0, (0, tsoa_1.Path)()),
+    __param(1, (0, tsoa_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], StockController.prototype, "updateUserById", null);
 exports.StockController = StockController = __decorate([
     (0, tsoa_1.Route)("stock"),
     (0, tsoa_1.Tags)("Stock")

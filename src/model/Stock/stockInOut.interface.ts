@@ -23,7 +23,7 @@ export interface IStockInOut {
     billingPDFLink: string;
 }
 
-export interface addStockkInOut {
+export interface addStockkInOutParams {
 
 
     stockID: OId;

@@ -12,6 +12,8 @@ const stock_controller_1 = require("./src/controller/stock.controller");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const supplier_controller_1 = require("./src/controller/supplier.controller");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+const units_controller_1 = require("./src/controller/units.controller");
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const user_controller_1 = require("./src/controller/user.controller");
 // @ts-ignore - no great way to install types from subpackage
 const promiseAny = require('promise.any');
@@ -83,7 +85,7 @@ const models = {
     "IGeneralStock": {
         "dataType": "refObject",
         "properties": {
-            "_id": { "ref": "OId" },
+            "_id": { "ref": "OId", "required": true },
             "companyProfileID": { "ref": "OId", "required": true },
             "stockName": { "dataType": "string", "required": true },
             "stockNameEN": { "dataType": "string", "required": true },
@@ -187,7 +189,78 @@ const models = {
         "additionalProperties": false,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "addStockkInOutParams": {
+        "dataType": "refObject",
+        "properties": {
+            "stockID": { "ref": "OId", "required": true },
+            "type": { "dataType": "string", "required": true },
+            "billingNumber": { "dataType": "string", "required": true },
+            "billingDate": { "dataType": "string", "required": true },
+            "supplierGroupID": { "ref": "OId", "required": true },
+            "customerGroupID": { "ref": "OId", "required": true },
+            "recordDate": { "dataType": "string", "required": true },
+            "unit": { "dataType": "string", "required": true },
+            "count": { "dataType": "double", "required": true },
+            "currency": { "dataType": "string", "required": true },
+            "purchasePrice": { "dataType": "double", "required": true },
+            "unitPrice": { "dataType": "double", "required": true },
+            "costPrice": { "dataType": "double", "required": true },
+            "salesPrice": { "dataType": "double", "required": true },
+            "barcode": { "dataType": "string", "required": true },
+            "leadTime": { "dataType": "string", "required": true },
+            "billingPDFLink": { "dataType": "string", "required": true },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "updateGeneralStockParams": {
+        "dataType": "refObject",
+        "properties": {
+            "companyProfileID": { "ref": "OId", "required": true },
+            "stockName": { "dataType": "string", "required": true },
+            "stockNameEN": { "dataType": "string", "required": true },
+            "stockCode": { "dataType": "string", "required": true },
+            "stockType": { "dataType": "string", "required": true },
+            "recordDate": { "dataType": "string", "required": true },
+            "isMainStock": { "dataType": "boolean", "required": true },
+            "status": { "dataType": "string", "required": true },
+            "marks": { "dataType": "string", "required": true },
+            "model": { "dataType": "string", "required": true },
+            "generalBarcode": { "dataType": "string", "required": true },
+            "stockUnit": { "dataType": "string", "required": true },
+            "stockCount": { "dataType": "double", "required": true },
+            "shelfNo": { "dataType": "string", "required": true },
+            "shelfFloorNo": { "dataType": "string", "required": true },
+            "specialCode": { "dataType": "string", "required": true },
+            "category": { "dataType": "string", "required": true },
+            "subCategory": { "dataType": "string", "required": true },
+            "subSubCategory": { "dataType": "string", "required": true },
+            "descriptions": { "dataType": "string", "required": true },
+            "producerCode": { "dataType": "string", "required": true },
+            "sutCode": { "dataType": "string", "required": true },
+            "producerName": { "dataType": "string", "required": true },
+            "producerAddress": { "dataType": "string", "required": true },
+            "leadTime": { "dataType": "string", "required": true },
+            "weightKg": { "dataType": "double", "required": true },
+            "weight": { "dataType": "string", "required": true },
+            "costPrice": { "dataType": "double", "required": true },
+            "outsourcingPrice": { "dataType": "double", "required": true },
+            "outsourcing": { "dataType": "boolean", "required": true },
+            "utsRecord": { "dataType": "boolean", "required": true },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "ISupplierGroup": {
+        "dataType": "refObject",
+        "properties": {
+            "_id": { "ref": "OId", "required": true },
+            "name": { "dataType": "string", "required": true },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "IUnit": {
         "dataType": "refObject",
         "properties": {
             "_id": { "ref": "OId", "required": true },
@@ -346,6 +419,41 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.post('/stock/stock-in-out', ...((0, runtime_1.fetchMiddlewares)(stock_controller_1.StockController)), ...((0, runtime_1.fetchMiddlewares)(stock_controller_1.StockController.prototype.addStockInOut)), function StockController_addStockInOut(request, response, next) {
+        const args = {
+            body: { "in": "body", "name": "body", "required": true, "ref": "addStockkInOutParams" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new stock_controller_1.StockController();
+            const promise = controller.addStockInOut.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.patch('/stock/:id', ...((0, runtime_1.fetchMiddlewares)(stock_controller_1.StockController)), ...((0, runtime_1.fetchMiddlewares)(stock_controller_1.StockController.prototype.updateUserById)), function StockController_updateUserById(request, response, next) {
+        const args = {
+            id: { "in": "path", "name": "id", "required": true, "ref": "OId" },
+            body: { "in": "body", "name": "body", "required": true, "ref": "updateGeneralStockParams" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new stock_controller_1.StockController();
+            const promise = controller.updateUserById.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     app.get('/supplier/supplier-get', ...((0, runtime_1.fetchMiddlewares)(supplier_controller_1.SupplierController)), ...((0, runtime_1.fetchMiddlewares)(supplier_controller_1.SupplierController.prototype.getAllSuppliers)), function SupplierController_getAllSuppliers(request, response, next) {
         const args = {};
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -354,6 +462,21 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new supplier_controller_1.SupplierController();
             const promise = controller.getAllSuppliers.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.get('/units/get-all', ...((0, runtime_1.fetchMiddlewares)(units_controller_1.UnitsController)), ...((0, runtime_1.fetchMiddlewares)(units_controller_1.UnitsController.prototype.getAllUnits)), function UnitsController_getAllUnits(request, response, next) {
+        const args = {};
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new units_controller_1.UnitsController();
+            const promise = controller.getAllUnits.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {
