@@ -7,4 +7,4 @@ const customerGroupSchema = new mongoose.Schema({
 
 const CustomerGroup = mongoose.model<ICustomerGroup & mongoose.Document>('CustomerGroup', customerGroupSchema);
 
-module.exports = CustomerGroup;
+export default CustomerGroup;

@@ -21,5 +21,5 @@ const roleSchema = new mongoose_1.default.Schema({
     }
 });
 const Role = mongoose_1.default.model('Role', roleSchema);
-module.exports = Role;
+exports.default = Role;
 //# sourceMappingURL=roles.model.js.map

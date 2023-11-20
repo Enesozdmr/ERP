@@ -10,4 +10,4 @@ const unitSchema = new mongoose.Schema({
 
 const Unit = mongoose.model<IUnit & mongoose.Document>('Unit', unitSchema);
 
-module.exports = Unit;
+export default Unit;

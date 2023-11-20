@@ -8,5 +8,5 @@ const supplierGroupSchema = new mongoose_1.default.Schema({
     name: String
 });
 const SupplierGroup = mongoose_1.default.model('SupplierGroup', supplierGroupSchema);
-module.exports = SupplierGroup;
+exports.default = SupplierGroup;
 //# sourceMappingURL=supplierGroup.model.js.map

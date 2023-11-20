@@ -12,5 +12,5 @@ const modelSchema = new mongoose_1.default.Schema({
     }
 });
 const Model = mongoose_1.default.model('Model', modelSchema);
-module.exports = Model;
+exports.default = Model;
 //# sourceMappingURL=model.model.js.map

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { IWasteReason } from './wasterReason.interface';
+import { IWasteReason } from './wasteReason.interface';
 
 const wasteReasonSchema = new mongoose.Schema({
     companyProfileID: {
@@ -26,4 +26,4 @@ const wasteReasonSchema = new mongoose.Schema({
 
 const WasteReason = mongoose.model<IWasteReason & mongoose.Document>('WasteReason', wasteReasonSchema);
 
-module.exports = WasteReason;
+export default WasteReason;

@@ -11,4 +11,4 @@ const modelSchema = new mongoose.Schema({
 
 const Model = mongoose.model<IModel & mongoose.Document>('Model', modelSchema);
 
-module.exports = Model;
+export default Model;

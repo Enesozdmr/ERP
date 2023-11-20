@@ -50,5 +50,5 @@ const personelProfileSchema = new mongoose_1.default.Schema({
     note: String
 });
 const PersonelProfile = mongoose_1.default.model('PersonelProfile', personelProfileSchema);
-module.exports = PersonelProfile;
+exports.default = PersonelProfile;
 //# sourceMappingURL=personelProfiles.model.js.map

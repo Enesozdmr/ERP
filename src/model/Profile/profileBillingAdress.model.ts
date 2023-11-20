@@ -43,4 +43,4 @@ const profileBillingAdressSchema = new mongoose.Schema({
 
 const ProfileBillingAdress = mongoose.model<IProfileBillingAdress & mongoose.Document>('ProfileBillingAdress', profileBillingAdressSchema);
 
-module.exports = ProfileBillingAdress;
+export default ProfileBillingAdress;

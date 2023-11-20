@@ -11,5 +11,5 @@ const unitSchema = new mongoose_1.default.Schema({
     }
 });
 const Unit = mongoose_1.default.model('Unit', unitSchema);
-module.exports = Unit;
+exports.default = Unit;
 //# sourceMappingURL=units.model.js.map

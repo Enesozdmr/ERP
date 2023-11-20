@@ -25,4 +25,4 @@ const productionStageSchema = new mongoose.Schema({
 
 const ProductionStage = mongoose.model<IProductionStage & mongoose.Document>('ProductionStage', productionStageSchema);
 
-module.exports = ProductionStage;
+export default ProductionStage;

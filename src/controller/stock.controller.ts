@@ -23,4 +23,5 @@ export class StockController extends Controller {
         return u as addGeneralStockParams
     }
 
+
 }

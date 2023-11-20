@@ -49,4 +49,4 @@ const personelProfileSchema = new mongoose.Schema({
 
 const PersonelProfile = mongoose.model<IPersonelProfile & mongoose.Document>('PersonelProfile', personelProfileSchema);
 
-module.exports = PersonelProfile;
+export default PersonelProfile;

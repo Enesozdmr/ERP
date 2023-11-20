@@ -41,5 +41,5 @@ const profileBillingAdressSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const ProfileBillingAdress = mongoose_1.default.model('ProfileBillingAdress', profileBillingAdressSchema);
-module.exports = ProfileBillingAdress;
+exports.default = ProfileBillingAdress;
 //# sourceMappingURL=profileBillingAdress.model.js.map

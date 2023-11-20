@@ -27,5 +27,5 @@ const routeSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const Route = mongoose_1.default.model('Route', routeSchema);
-module.exports = Route;
+exports.default = Route;
 //# sourceMappingURL=routes.model.js.map

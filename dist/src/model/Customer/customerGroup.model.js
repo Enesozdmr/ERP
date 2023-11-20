@@ -8,5 +8,5 @@ const customerGroupSchema = new mongoose_1.default.Schema({
     name: String
 });
 const CustomerGroup = mongoose_1.default.model('CustomerGroup', customerGroupSchema);
-module.exports = CustomerGroup;
+exports.default = CustomerGroup;
 //# sourceMappingURL=customerGroup.model.js.map

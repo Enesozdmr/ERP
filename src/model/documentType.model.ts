@@ -7,4 +7,4 @@ const documentTypeSchema = new mongoose.Schema({
 
 const DocumentType = mongoose.model<IDocumentType & mongoose.Document>('DocumentType', documentTypeSchema);
 
-module.exports = DocumentType;
+export default DocumentType;

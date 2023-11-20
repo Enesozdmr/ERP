@@ -7,4 +7,4 @@ const taskGroupSchema = new mongoose.Schema({
 
 const TaskGroup = mongoose.model<ITaskGroup & mongoose.Document>('TaskGroup', taskGroupSchema);
 
-module.exports = TaskGroup;
+export default TaskGroup;

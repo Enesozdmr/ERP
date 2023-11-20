@@ -37,5 +37,5 @@ const billingAddressSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const BillingAddress = mongoose_1.default.model('CompanyBillingAddress', billingAddressSchema);
-module.exports = BillingAddress;
+exports.default = BillingAddress;
 //# sourceMappingURL=companyBillingAddress.model.js.map

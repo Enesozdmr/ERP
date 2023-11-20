@@ -8,4 +8,4 @@ const productGroupSchema = new mongoose.Schema({
 
 const ProductGroup = mongoose.model<IProductGroup & mongoose.Document>('ProductGroup', productGroupSchema);
 
-module.exports = ProductGroup;
+export default ProductGroup;

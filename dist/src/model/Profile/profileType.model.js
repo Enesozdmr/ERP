@@ -10,5 +10,5 @@ const profileTypeSchema = new mongoose_1.default.Schema({
     }
 });
 const ProfileType = mongoose_1.default.model('ProfileType', profileTypeSchema);
-module.exports = ProfileType;
+exports.default = ProfileType;
 //# sourceMappingURL=profileType.model.js.map

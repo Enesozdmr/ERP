@@ -32,4 +32,4 @@ const operationSchema = new mongoose.Schema({
 
 const Operation = mongoose.model<IOperation & mongoose.Document>('Operation', operationSchema);
 
-module.exports = Operation;
+export default Operation;

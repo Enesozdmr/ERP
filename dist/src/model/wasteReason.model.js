@@ -23,5 +23,5 @@ const wasteReasonSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const WasteReason = mongoose_1.default.model('WasteReason', wasteReasonSchema);
-module.exports = WasteReason;
+exports.default = WasteReason;
 //# sourceMappingURL=wasteReason.model.js.map

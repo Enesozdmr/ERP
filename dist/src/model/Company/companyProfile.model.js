@@ -20,5 +20,5 @@ const companyProfileSchema = new mongoose_1.default.Schema({
     logo: String
 });
 const CompanyProfile = mongoose_1.default.model('CompanyProfile', companyProfileSchema);
-module.exports = CompanyProfile;
+exports.default = CompanyProfile;
 //# sourceMappingURL=companyProfile.model.js.map

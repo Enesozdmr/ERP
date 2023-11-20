@@ -518,6 +518,22 @@
                 "type": "object",
                 "additionalProperties": false
             },
+            "ISupplierGroup": {
+                "properties": {
+                    "_id": {
+                        "$ref": "#/components/schemas/OId"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "name"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
             "User": {
                 "properties": {
                     "_id": {
@@ -875,6 +891,52 @@
                         }
                     }
                 }
+            }
+        },
+        "/supplier/supplier-get": {
+            "get": {
+                "operationId": "GetAllSuppliers",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "allOf": [
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/ISupplierGroup"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/Document_any.any.any_"
+                                            },
+                                            {
+                                                "properties": {
+                                                    "_id": {
+                                                        "$ref": "#/components/schemas/ObjectId"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "_id"
+                                                ],
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Supplier"
+                ],
+                "security": [],
+                "parameters": []
             }
         },
         "/users/get-all": {

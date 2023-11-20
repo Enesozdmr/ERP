@@ -7,6 +7,8 @@ import { ProfileController } from './src/controller/profile.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { StockController } from './src/controller/stock.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { SupplierController } from './src/controller/supplier.controller';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { UserController } from './src/controller/user.controller';
 import { expressAuthentication } from './src/middleware/authentication.middleware';
 // @ts-ignore - no great way to install types from subpackage
@@ -182,6 +184,15 @@ const models: TsoaRoute.Models = {
             "outsourcingPrice": {"dataType":"double","required":true},
             "outsourcing": {"dataType":"boolean","required":true},
             "utsRecord": {"dataType":"boolean","required":true},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "ISupplierGroup": {
+        "dataType": "refObject",
+        "properties": {
+            "_id": {"ref":"OId","required":true},
+            "name": {"dataType":"string","required":true},
         },
         "additionalProperties": false,
     },
@@ -383,6 +394,30 @@ export function RegisterRoutes(app: Router) {
 
 
               const promise = controller.addGeneralStock.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.get('/supplier/supplier-get',
+            ...(fetchMiddlewares<RequestHandler>(SupplierController)),
+            ...(fetchMiddlewares<RequestHandler>(SupplierController.prototype.getAllSuppliers)),
+
+            function SupplierController_getAllSuppliers(request: any, response: any, next: any) {
+            const args = {
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new SupplierController();
+
+
+              const promise = controller.getAllSuppliers.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

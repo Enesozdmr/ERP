@@ -7,4 +7,4 @@ const marksSchema = new mongoose.Schema({
 
 const Marks = mongoose.model<IMarks & mongoose.Document>('Marks', marksSchema);
 
-module.exports = Marks;
+export default Marks;

@@ -10,4 +10,4 @@ const profileTypeSchema = new mongoose.Schema({
 
 const ProfileType = mongoose.model<IProfileType & mongoose.Document>('ProfileType', profileTypeSchema);
 
-module.exports = ProfileType;
+export default ProfileType;

@@ -29,4 +29,4 @@ const routeSchema = new mongoose.Schema({
 
 const Route = mongoose.model<IRoute & mongoose.Document>('Route', routeSchema);
 
-module.exports = Route;
+export default Route;

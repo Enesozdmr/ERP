@@ -1,3 +1,3 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=wasterReason.interface.js.map
+//# sourceMappingURL=wasteReason.interface.js.map

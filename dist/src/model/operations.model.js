@@ -30,5 +30,5 @@ const operationSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const Operation = mongoose_1.default.model('Operation', operationSchema);
-module.exports = Operation;
+exports.default = Operation;
 //# sourceMappingURL=operations.model.js.map

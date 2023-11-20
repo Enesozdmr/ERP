@@ -7,4 +7,4 @@ const supplierGroupSchema = new mongoose.Schema({
 
 const SupplierGroup = mongoose.model<ISupplierGroup & mongoose.Document>('SupplierGroup', supplierGroupSchema);
 
-module.exports = SupplierGroup;
+export default SupplierGroup

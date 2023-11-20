@@ -8,5 +8,5 @@ const marksSchema = new mongoose_1.default.Schema({
     name: String
 });
 const Marks = mongoose_1.default.model('Marks', marksSchema);
-module.exports = Marks;
+exports.default = Marks;
 //# sourceMappingURL=marks.model.js.map

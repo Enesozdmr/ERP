@@ -22,3 +22,26 @@ export interface IStockInOut {
     leadTime: string;
     billingPDFLink: string;
 }
+
+export interface addStockkInOut {
+
+
+    stockID: OId;
+    type: string;
+    billingNumber: string;
+    billingDate: string;
+    supplierGroupID: OId;
+    customerGroupID: OId;
+    recordDate: string;
+    unit: string;
+    count: number;
+    currency: string;
+    purchasePrice: number;
+    unitPrice: number;
+    costPrice: number;
+    salesPrice: number;
+    barcode: string;
+    leadTime: string;
+    billingPDFLink: string;
+
+}

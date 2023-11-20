@@ -19,4 +19,4 @@ const companyProfileSchema = new mongoose.Schema({
 
 const CompanyProfile = mongoose.model<ICompanyProfile & mongoose.Document>('CompanyProfile', companyProfileSchema);
 
-module.exports = CompanyProfile;
+export default CompanyProfile;

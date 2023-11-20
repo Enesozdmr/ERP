@@ -23,5 +23,5 @@ const productionStageSchema = new mongoose_1.default.Schema({
     versionKey: false
 });
 const ProductionStage = mongoose_1.default.model('ProductionStage', productionStageSchema);
-module.exports = ProductionStage;
+exports.default = ProductionStage;
 //# sourceMappingURL=productionStage.model.js.map

@@ -8,5 +8,5 @@ const documentTypeSchema = new mongoose_1.default.Schema({
     name: String
 });
 const DocumentType = mongoose_1.default.model('DocumentType', documentTypeSchema);
-module.exports = DocumentType;
+exports.default = DocumentType;
 //# sourceMappingURL=documentType.model.js.map

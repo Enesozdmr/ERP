@@ -8,5 +8,5 @@ const taskGroupSchema = new mongoose_1.default.Schema({
     name: String
 });
 const TaskGroup = mongoose_1.default.model('TaskGroup', taskGroupSchema);
-module.exports = TaskGroup;
+exports.default = TaskGroup;
 //# sourceMappingURL=taskGroup.model.js.map
